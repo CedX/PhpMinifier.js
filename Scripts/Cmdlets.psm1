@@ -28,7 +28,7 @@ function Invoke-ESLint {
 		[string] $Configuration
 	)
 
-	$argumentList = "--cache", "--cache-location", "$PSScriptRoot/../var"
+	$argumentList = "--cache", "--cache-location", "$PSScriptRoot/../Temp"
 	if ($Configuration) { $argumentList += "--config", $Configuration }
 	$argumentList += $Path
 	npx eslint @argumentList

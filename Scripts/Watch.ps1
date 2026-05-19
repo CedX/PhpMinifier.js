@@ -1,4 +1,4 @@
 using module ./Cmdlets.psm1
 
 "Watching for file changes..."
-Invoke-TypeScript src/tsconfig.json -SourceMap -Watch
+Invoke-TypeScript Sources/tsconfig.json -SourceMap -Watch

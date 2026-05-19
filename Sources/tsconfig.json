@@ -8,11 +8,11 @@
 		"module": "NodeNext",
 		"noEmit": false,
 		"noImplicitOverride": true,
-		"outDir": "../lib",
+		"outDir": "../Distributable",
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"target": "ESNext",
-		"tsBuildInfoFile": "../var/tsbuildinfo.json",
+		"tsBuildInfoFile": "../Temp/TSBuildInfoFile.json",
 		"types": ["fancy-log", "node", "vinyl"],
 		"verbatimModuleSyntax": true
 	}

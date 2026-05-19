@@ -35,7 +35,7 @@ describe("FastTransformer", () => {
 		after(() => transformer.dispose());
 
 		for (const [key, value] of patterns) it(key, async () => {
-      const output = await transformer.transform("res/Sample.php");
+      const output = await transformer.transform("Resources/Sample.php");
 			ok(output.includes(value));
     });
 	});

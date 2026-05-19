@@ -18,7 +18,7 @@ describe("GulpPlugin", () => {
 		]);
 
 		describe("Fast", () => {
-			const file = new File({path: resolve("res/Sample.php")});
+			const file = new File({path: resolve("Resources/Sample.php")});
 			const plugin = new GulpPlugin({mode: TransformMode.Fast, quiet: true});
 			after(() => plugin.emit("end"));
 
@@ -29,7 +29,7 @@ describe("GulpPlugin", () => {
 		});
 
 		describe("Safe", () => {
-			const file = new File({path: resolve("res/Sample.php")});
+			const file = new File({path: resolve("Resources/Sample.php")});
 			const plugin = new GulpPlugin({mode: TransformMode.Safe, quiet: true});
 			after(() => plugin.emit("end"));
 
