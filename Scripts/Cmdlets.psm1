@@ -39,7 +39,7 @@ function Invoke-ESLint {
 	Invokes the Node.js test runner.
 #>
 function Invoke-NodeTest {
-	node --enable-source-maps --test
+	node --enable-source-maps --test "$PSScriptRoot/../Tests/**/*.Tests.js"
 }
 
 <#
