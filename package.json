@@ -9,7 +9,7 @@
 	"type": "module",
 	"version": "8.0.0",
 	"bin": {
-		"PhpMinifier": "bin/PhpMinifier.js"
+		"PhpMinifier": "Binaries/PhpMinifier.js"
 	},
 	"dependencies": {
 		"fancy-log": "^2.0.0",
@@ -36,7 +36,7 @@
 	"files": [
 		"Distributable/",
 		"Sources/",
-		"www/"
+		"Web/"
 	],
 	"keywords": [
 		"compress",

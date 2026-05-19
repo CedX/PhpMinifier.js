@@ -56,7 +56,7 @@ export class FastTransformer implements ITransformer {
 
 		this.#port = await this.#getPort();
 		return new Promise((fulfill, reject) => {
-			const args = ["-S", `127.0.0.1:${this.#port}`, "-t", join(import.meta.dirname, "../www")];
+			const args = ["-S", `127.0.0.1:${this.#port}`, "-t", join(import.meta.dirname, "../Web")];
 			this.#process = spawn(this.#executable, args, {stdio: ["ignore", "pipe", "ignore"]})
 				.on("error", reject)
 				.on("spawn", () => setTimeout(() => fulfill(this.#port), 1_000));
