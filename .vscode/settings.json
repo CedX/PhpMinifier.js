@@ -6,5 +6,6 @@
 	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
 	"[markdown]": {"files.trimTrailingWhitespace": false},
+	"[powershell]": {"files.encoding": "utf8bom"},
 	"[yaml]": {"editor.insertSpaces": true}
 }
