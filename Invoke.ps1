@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 param (
 	# The name of the task to invoke.
-	[Parameter(Position = 0)]
+	[Parameter(Position = 1)]
 	[ArgumentCompleter({
 		param ([string] $commandName, [string] $parameterName, [string] $wordToComplete)
 		(Get-Item "$PSScriptRoot/Scripts/$wordToComplete*.ps1").BaseName
