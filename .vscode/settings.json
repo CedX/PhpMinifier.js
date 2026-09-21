@@ -5,6 +5,7 @@
 	"files.encoding": "utf8",
 	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
+	"[fsharp]": {"editor.insertSpaces": true},
 	"[markdown]": {"files.trimTrailingWhitespace": false},
 	"[powershell]": {"files.encoding": "utf8bom"},
 	"[yaml]": {"editor.insertSpaces": true}

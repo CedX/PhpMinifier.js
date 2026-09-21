@@ -28,6 +28,9 @@ dotnet_diagnostic.CS8524.severity = silent
 dotnet_sort_system_directives_first = false
 dotnet_style_namespace_match_folder = false
 
+[*.{fs,fsx}]
+indent_style = space
+
 [*.md]
 trim_trailing_whitespace = false
 
