@@ -6,6 +6,7 @@
 *.csproj text
 *.css text diff=css
 *.fs text
+*.fsproj text
 *.fsx text
 *.html text diff=html
 *.http text
