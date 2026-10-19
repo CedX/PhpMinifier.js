@@ -8,6 +8,6 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"target": "ESNext",
-		"types": ["node", "vinyl"]
+		"types": ["chai", "mocha", "node", "vinyl"]
 	}
 }
