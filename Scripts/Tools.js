@@ -37,12 +37,14 @@ export function removeItem(path) {
 /**
  * Invokes the specified command.
  * @param {string} command The command to invoke.
+ * @param {string} argumentList The command arguments.
  */
-export function startProcess(command) {
-	try { execSync(command, {encoding: "utf8", stdio: "inherit"}); }
+export function startProcess(command, argumentList = "") {
+	const commandLine = `${command} ${argumentList}`.trimEnd();
+	try { execSync(commandLine, {encoding: "utf8", stdio: "inherit"}); }
 	catch (error) {
 		const result = /** @type {import("node:child_process").SpawnSyncReturns<string>} */ (error);
-		console.error(Error.isError(result) ? result.message : `Command failed: ${command}`);
+		console.error(Error.isError(result) ? result.message : `Command failed: ${commandLine}`);
 		process.exit(Number.isInteger(result.status) ? result.status : 1);
 	}
 }
