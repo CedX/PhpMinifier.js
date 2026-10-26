@@ -1,8 +1,8 @@
 import {execSync} from "node:child_process";
-import console from "node:console";
+import {error, log} from "node:console";
 import {readdirSync, rmSync} from "node:fs";
 import {join} from "node:path";
-import process from "node:process";
+import {exit} from "node:process";
 import pkg from "../package.json" with {type: "json"};
 
 /**
@@ -15,7 +15,7 @@ export const {version} = pkg;
  * Prints the specified message to the standard output.
  * @param {string} message The message to print.
  */
-export const writeOutput = console.log.bind(console);
+export const writeOutput = log;
 
 /**
  * Cleans the directory located at the specified path.
@@ -42,9 +42,8 @@ export function removeItem(path) {
 export function startProcess(command, argumentList = "") {
 	const commandLine = `${command} ${argumentList}`.trimEnd();
 	try { execSync(commandLine, {encoding: "utf8", stdio: "inherit"}); }
-	catch (error) {
-		const result = /** @type {import("node:child_process").SpawnSyncReturns<string>} */ (error);
-		console.error(Error.isError(result) ? result.message : `Command failed: ${commandLine}`);
-		process.exit(Number.isInteger(result.status) ? result.status : 1);
+	catch (err) {
+		error(Error.isError(err) ? err.message : `Command failed: ${commandLine}`);
+		exit(1);
 	}
 }
