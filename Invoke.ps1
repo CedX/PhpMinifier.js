@@ -1,18 +1,22 @@
 #!/usr/bin/env pwsh
 param (
-	# The name of the task to invoke.
+	# The script to invoke.
 	[Parameter(Position = 1)]
 	[ArgumentCompleter({
 		param ([string] $commandName, [string] $parameterName, [string] $wordToComplete)
-		(Get-Item "$PSScriptRoot/Scripts/$wordToComplete*.ps1").BaseName
+		(Get-Item "$PSScriptRoot/Scripts/$wordToComplete*.js").BaseName
 	})]
 	[ValidateScript(
-		{ Test-Path "$PSScriptRoot/Scripts/$_.ps1" -PathType Leaf },
-		ErrorMessage = "The specified command does not exist."
+		{ Test-Path "$PSScriptRoot/Scripts/$_.js" -PathType Leaf },
+		ErrorMessage = "The specified script does not exist."
 	)]
-	[string] $Command = "Default"
+	[string] $Script = "Default",
+
+	# The script arguments.
+	[Parameter(ValueFromRemainingArguments)]
+	[string[]] $Arguments = @()
 )
 
 $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
-& "$PSScriptRoot/Scripts/$Command.ps1"
+node "$PSScriptRoot/Scripts/$Script.js" @Arguments
