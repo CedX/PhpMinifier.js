@@ -36,17 +36,16 @@ export function removeItem(path) {
 export function startProcess(command, argumentList = "") {
 	const commandLine = `${command} ${argumentList}`.trimEnd();
 	try { execSync(commandLine, {encoding: "utf8", stdio: "inherit"}); }
-	catch (err) { writeError(Error.isError(err) ? err.message : `Command failed: ${commandLine}`, 1); }
+	catch (err) { writeError(Error.isError(err) ? err.message : `Command failed: ${commandLine}`); }
 }
 
 /**
- * Prints the specified message to the standard error.
+ * Prints the specified message to the standard error and terminates the process.
  * @param {string} message The message to print.
- * @param {number} exitCode The exit code to eventually return to the operating system.
  */
-export function writeError(message, exitCode = 0) {
+export function writeError(message) {
 	error(message);
-	if (exitCode) exit(exitCode);
+	exit(1);
 }
 
 /**
