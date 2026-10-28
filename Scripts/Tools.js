@@ -42,6 +42,7 @@ export function startProcess(command, argumentList = "") {
 /**
  * Prints the specified message to the standard error and terminates the process.
  * @param {string} message The message to print.
+ * @returns {never}
  */
 export function writeError(message) {
 	error(message);
