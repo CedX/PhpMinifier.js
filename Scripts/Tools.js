@@ -31,12 +31,13 @@ export function removeItem(path) {
 /**
  * Invokes the specified command.
  * @param {string} command The command to invoke.
- * @param {string} argumentList The command arguments.
+ * @param {string|Partial<{arguments: string, ignoreErrors: boolean}>} options The command arguments.
  */
-export function startProcess(command, argumentList = "") {
-	const commandLine = `${command} ${argumentList}`.trimEnd();
+export function startProcess(command, options = {}) {
+	if (typeof options == "string") options = {arguments: options};
+	const commandLine = `${command} ${options.arguments ?? ""}`.trimEnd();
 	try { execSync(commandLine, {encoding: "utf8", stdio: "inherit"}); }
-	catch (err) { writeError(Error.isError(err) ? err.message : `Command failed: ${commandLine}`); }
+	catch (err) { if (!options.ignoreErrors) writeError(Error.isError(err) ? err.message : `Command failed: ${commandLine}`); }
 }
 
 /**
