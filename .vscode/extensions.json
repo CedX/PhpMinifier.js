@@ -1,6 +1,5 @@
 {
 	"recommendations": [
-		"bmewburn.vscode-intelephense-client",
-		"ms-vscode.powershell"
+		"bmewburn.vscode-intelephense-client"
 	]
 }
