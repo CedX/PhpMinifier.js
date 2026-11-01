@@ -4,7 +4,7 @@
 		{
 			"label": "Build",
 			"type": "shell",
-			"command": "./Invoke.ps1",
+			"command": "${workspaceFolder}${/}Invoke.ps1",
 			"args": ["Build"]
 		}
 	]
