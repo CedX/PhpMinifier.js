@@ -1,4 +1,5 @@
 import {startProcess, version, writeOutput} from "./Tools.js";
+import "./Default.js";
 
 writeOutput("Tagging the repository...");
 startProcess("git", `tag v${version}`);
