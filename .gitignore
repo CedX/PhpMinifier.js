@@ -1,6 +1,6 @@
-/**/*.user
 /.idea/
 /.vs/
+/**/*.user
 /Distributable/
 /node_modules/
 /npm-debug.log
